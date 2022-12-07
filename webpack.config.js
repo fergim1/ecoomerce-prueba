@@ -1,9 +1,9 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const Dotenv = require('dotenv-webpack')
-const webpack = require('webpack')
-require('dotenv').config()
+const Dotenv = require('dotenv-webpack')
+// const webpack = require('webpack')
+// require('dotenv').config()
 
 module.exports = {
 	mode: 'production',
@@ -55,12 +55,12 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: 'assets/[name].[contenthash].css',
 		}),
-		// new Dotenv(),
-		new webpack.DefinePlugin({
-			'process.env': {
-				PAYPAL_CLIENT_ID: JSON.stringify(process.env.PAYPAL_CLIENT_ID),
-				GOOGLE_API_KEY: JSON.stringify(process.env.GOOGLE_API_KEY),
-			},
-		}),
+		new Dotenv(),
+		// new webpack.DefinePlugin({
+		// 	'process.env': {
+		// 		PAYPAL_CLIENT_ID: JSON.stringify(process.env.PAYPAL_CLIENT_ID),
+		// 		GOOGLE_API_KEY: JSON.stringify(process.env.GOOGLE_API_KEY),
+		// 	},
+		// }),
 	],
 }
