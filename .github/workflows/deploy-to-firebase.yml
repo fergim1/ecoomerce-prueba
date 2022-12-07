@@ -12,6 +12,9 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+        env:
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
