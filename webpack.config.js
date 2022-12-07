@@ -6,13 +6,13 @@ const webpack = require('webpack')
 require('dotenv').config()
 
 module.exports = {
-	entry: '../src/index.js',
 	mode: 'production',
+	entry: './src/Index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.[contenthash].js',
 		clean: true,
-		publicPath: './',
+		publicPath: '/',
 	},
 
 	resolve: {
